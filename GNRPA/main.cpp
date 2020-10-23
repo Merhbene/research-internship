@@ -216,10 +216,14 @@ public:
 //#include "gnrpa.set.pol.opt.beam.stuck.parallel.c"
 
 
-int main()//int argc, char *argv [])
+int main(int argc, char *argv [])
 {
-  //char * nom = argv [1];
-  ifstream infile("web-spam.txt");
+  //graph file
+  char * nom1 = argv [1];
+  //probability file
+  char * nom2 = argv [2];
+
+  ifstream infile(nom1);
 
   int n ,m , NbVertices,NbEdges;
 
@@ -250,7 +254,7 @@ int main()//int argc, char *argv [])
   }
 
 
-  ifstream fichier("p_web-spam_3.txt", ios::in);// on ouvre
+  ifstream fichier(nom2, ios::in);
 
   for (int i=0 ; i<NbVertices ; i++)
    {
@@ -262,14 +266,6 @@ int main()//int argc, char *argv [])
 
     }
 
-  /*
-  Board b;
-  //b.greedy_playout ();
-
-  cout<<"score:" << b.score() <<endl;
-  cout<<"Final independet set :"<<"\n";
-  b.print_vertices();
-*/
 
 
   /**/
@@ -283,52 +279,9 @@ int main()//int argc, char *argv [])
   float score;
   bestBoard.print_vertices();
 
-  /*
-  Board b1;
-  score = nested (b1, 1);
-  cout<<"score:" << b1.score() <<endl;
-  cout<<"Final independet set :"<<"\n";
-  b1.print_vertices();
-  /**/
-
-  /*
-  Board b2;
-  score = nested (b2, 2);
-  cout<<"score:" << b2.score() <<endl;
-  cout<<"Final independet set :"<<"\n";
-  b2.print_vertices();
-  /**/
-
-  /*
-    for (int i =0 ; i<NbVertices ; i++ )
-    {
-    for (int j=0 ; j<neighbours[i].size();j++)
-    cout <<i << " " << neighbours[i][j] << endl;
-    }
-  */
+ 
 
   return 0;
 }
 
-/*
-int main()
-{
-        ifstream fichier("prob_bio-yeast.txt", ios::in);// on ouvre
-        vector<float> proba;
 
-        for (int i=0 ; i<1000 ; i++)
-       {
-
-        float p;
-        fichier >> p;
-        //std::cout << "Mon entier vaut : " << p << std::endl;
-        proba.push_back(p);
-
-        }
-        for (std::vector<float>::const_iterator i = proba.begin(); i != proba.end(); ++i)
-        std::cout << *i << ' ';
-
-
-        return 0;
-}
-*/
