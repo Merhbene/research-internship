@@ -190,10 +190,10 @@ public:
 //#include "gnrpa.set.pol.opt.beam.stuck.parallel.c"
 
 
-int main()//int argc, char *argv [])
+int main(int argc, char *argv [])
 {
-  //char * nom = argv [1];
-  ifstream infile("web-spam.txt");
+  char * nom = argv [1];
+  ifstream infile(nom);
 
 
   int n ,m , NbVertices,NbEdges;
